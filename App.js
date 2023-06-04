@@ -1,20 +1,33 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigation from './navigation/StackNavigation';
+import HomeTest from './components/HomeTest';
+
+// for shopify theme provider
+import { ThemeProvider as RestyleThemeProvider } from "@shopify/restyle";
+import theme from './theme';
+import { darkTheme } from './theme';
 
 export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    <SafeAreaView style={styles.container}>
+      <RestyleThemeProvider theme={darkMode ? darkTheme : theme}>
+        <NavigationContainer>
+          <StackNavigation />
+        </NavigationContainer>
+      </RestyleThemeProvider>
+    </SafeAreaView>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
 });
