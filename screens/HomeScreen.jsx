@@ -1,7 +1,7 @@
-import { View, Button, Switch } from 'react-native'
+import { View, Button, Switch, Alert } from 'react-native'
 import React from 'react'
 import { useTheme } from '@shopify/restyle'
-import { Box, Text } from '../utils/theme'
+import { Box, Text, Card } from '../utils/theme'
 
 import {
     createBox,
@@ -9,7 +9,7 @@ import {
     createTheme,
 } from '@shopify/restyle';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, darkMode }) => {
     const theme = useTheme();
     const { cardPrimaryBackground } = theme.colors;
     return (
@@ -19,13 +19,25 @@ const HomeScreen = ({ navigation }) => {
                 title="Go to Cart"
                 onPress={() => navigation.navigate('CartScreen')}
             />
-
             <Box
                 backgroundColor="homeBackground"
                 margin="2"
                 padding="2"
                 style={{ marginHorizontal: 10 }}
+                flexDirection={{ phone: 'column', tablet: 'row' }}
             >
+                <Text variant="body" color="primaryCardText">
+                    This is variant = body , color = primaryCardText , backgroundColor = homeBackground
+                </Text>
+                <Text variant="body" color="primaryCardText">
+                    This is variant = body , color = primaryCardText , backgroundColor = homeBackground
+                </Text>
+                <Text margin="2" variant="body" color="primaryCardText">
+                    This is variant = body , color = primaryCardText , backgroundColor = homeBackground
+                </Text>
+                <Text variant="body" color="primaryCardText">
+                    This is variant = body , color = primaryCardText , backgroundColor = homeBackground
+                </Text>
                 <Text variant="body" color="primaryCardText">
                     This is variant = body , color = primaryCardText , backgroundColor = homeBackground
                 </Text>
@@ -57,7 +69,27 @@ const HomeScreen = ({ navigation }) => {
                     margin = l, padding = m ,This is variant = body , color = primaryCardText
                 </Text>
             </Box>
+            <Button
+                style={{
+                    backgroundColor: '#2196F3',
+                    padding: 10,
+                    borderRadius: 5,
+                }}
+                borderRadius="rounded"
+                padding="2"
+                onPress={() => Alert.alert("Hello button")}
+                title="button"
+                color="#841584"
+                backgroundColor="secondaryCardBackground"
+                accessibilityLabel="Learn more about this purple button"
+            >Not Button</Button>
             <Text>Hello world</Text>
+            {/* <Card
+                variant="cardVariants"
+                justifyContent="center"
+                alignItems="center">
+                <Text variant="textBase">Card variants</Text>
+            </Card> */}
         </View>
     )
 }

@@ -1,14 +1,12 @@
-import { View, Text, Button } from 'react-native'
+import { View, Button } from 'react-native'
 import React from 'react'
 // for @shopify/restyle
+import { Box, Text } from '../utils/theme'
 
-import { createBox } from '@shopify/restyle'
-
-const Box = createBox();
 const CartScreen = () => {
     return (
-        <Box flex={1} backgroundColor="cartBackground" padding="2" >
-            <Text variant="heading">Cart</Text>
+        <Box flex={1} backgroundColor="mainBackground" padding="2" >
+            <Text variant="textLg">Cart</Text>
             <Box
                 backgroundColor="homeBackground"
                 padding="1"
@@ -17,6 +15,14 @@ const CartScreen = () => {
                 <Text variant="body" background="cartBackground" color="primaryCardText">capaccino</Text>
                 <Text variant="body" background="cartBackground" color="primaryCardText">Coffee</Text>
                 <Text variant="body" background="cartBackground" color="primaryCardText">Tea</Text>
+                {/* Add your cart items here */}
+            </Box>
+            <Box
+                backgroundColor="homeBackground"
+                padding="1"
+                marginVertical="3"
+            >
+                <Text variant="text4Xl">hello world</Text>
                 {/* Add your cart items here */}
             </Box>
         </Box>
