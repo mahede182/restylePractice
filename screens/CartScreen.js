@@ -7,12 +7,12 @@ import { createBox } from '@shopify/restyle'
 const Box = createBox();
 const CartScreen = () => {
     return (
-        <Box flex={1} backgroundColor="cartBackground" padding="md" >
+        <Box flex={1} backgroundColor="cartBackground" padding="2" >
             <Text variant="heading">Cart</Text>
             <Box
                 backgroundColor="homeBackground"
-                padding="m"
-                marginVertical="md"
+                padding="1"
+                marginVertical="3"
             >
                 <Text variant="body" background="cartBackground" color="primaryCardText">capaccino</Text>
                 <Text variant="body" background="cartBackground" color="primaryCardText">Coffee</Text>

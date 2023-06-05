@@ -7,8 +7,8 @@ import HomeTest from './components/HomeTest';
 
 // for shopify theme provider
 import { ThemeProvider as RestyleThemeProvider } from "@shopify/restyle";
-import theme from './theme';
-import { darkTheme } from './theme';
+import theme from './utils/theme';
+import { darkTheme } from './utils/theme';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);

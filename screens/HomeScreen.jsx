@@ -1,17 +1,13 @@
 import { View, Button, Switch } from 'react-native'
 import React from 'react'
 import { useTheme } from '@shopify/restyle'
-
+import { Box, Text } from '../utils/theme'
 
 import {
     createBox,
     createText,
     createTheme,
 } from '@shopify/restyle';
-
-const Box = createBox();
-const Text = createText();
-
 
 const HomeScreen = ({ navigation }) => {
     const theme = useTheme();
@@ -26,8 +22,8 @@ const HomeScreen = ({ navigation }) => {
 
             <Box
                 backgroundColor="homeBackground"
-                margin="s"
-                padding="m"
+                margin="2"
+                padding="2"
                 style={{ marginHorizontal: 10 }}
             >
                 <Text variant="body" color="primaryCardText">
@@ -36,15 +32,15 @@ const HomeScreen = ({ navigation }) => {
             </Box>
             <Box
                 backgroundColor="homeBackground"
-                margin="s"
-                padding="m"
+                margin="2"
+                padding="1"
             >
-                <Text color="primaryCardText" textVariants="header"> Header</Text>
+                <Text color="primaryCardText" textVariants="textLg"> Header</Text>
             </Box>
             <Box
                 backgroundColor="homeBackground"
-                margin="l"
-                padding="m"
+                margin="2"
+                padding="2"
             >
                 <Text variant="body" color="primaryCardText">
                     margin = l, padding = m ,This is variant = body , color = primaryCardText
@@ -55,9 +51,9 @@ const HomeScreen = ({ navigation }) => {
             </Text>
             <Box
                 backgroundColor="secondaryCardBackground"
-                margin="l"
-                padding="m">
-                <Text variant="header" color="secondaryCardBackground">
+                margin="2"
+                padding="1">
+                <Text variant="" color="secondaryCardBackground">
                     margin = l, padding = m ,This is variant = body , color = primaryCardText
                 </Text>
             </Box>
